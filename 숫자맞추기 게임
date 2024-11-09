@@ -1,0 +1,39 @@
+import random
+print("Welcome to the Number Guessing Game!\nI'm thinking of a number between 1 and 100.")
+level = input("Choose a difficulty. Type 'easy' or 'hard': ").lower()
+
+if level == "easy":
+    num = random.randint(1, 101)
+    print(num)
+    i = 0
+    while i < 10:
+        i += 1
+        print(f"You have {11 - i} attempts remaining to guess the number.")
+        guess_num = int(input("Make a guess: "))
+        if i >= 10:
+            print("Game Over")
+        elif guess_num > num:
+            print("Too High")
+        elif guess_num < num:
+            print("Too Low")
+        elif guess_num == num:
+            print(f"You got it! The answer was {num}.")
+            i = 10
+
+if level == "hard":
+    num = random.randint(1, 101)
+    print(num)
+    i = 0
+    while i < 5:
+        i += 1
+        print(f"You have {6 - i} attempts remaining to guess the number.")
+        guess_num = int(input("Make a guess: "))
+        if i >= 5:
+            print("Game Over")
+        elif guess_num > num:
+            print("Too High")
+        elif guess_num < num:
+            print("Too Low")
+        elif guess_num == num:
+            print(f"You got it! The answer was {num}.")
+            i = 5
